@@ -1,0 +1,45 @@
+# VARIABLES
+@api = http://localhost:3000/
+
+# METODOS GET
+
+#TABLA
+@apiListaClientes = clientes
+GET {{api}}{{apiListaClientes}}
+
+#DATO POR ID
+@apiClientePorId = cliente/1
+GET {{api}}{{apiClientePorId}}
+
+#TOTAL DE DATOS DE CLIENTES
+@apiTotalListaClientes = clientes/total
+GET {{api}}{{apiTotalListaClientes}}
+
+# METODOS POST
+
+#CREAR CLIENTE
+@apiCrearCliente = cliente/crear
+POST {{api}}{{apiCrearCliente}}
+Content-Type: application/json
+
+{
+  "nombre": "Mario Jose",
+  "apellidos": "Ceron Lopez",
+  "email": "manu@gmail.com"
+}
+
+//METODOS DELETE
+#ELIMINAR DATO POR ID
+@apiClienteEliminarPorId = cliente/eliminar/6
+DELETE {{api}}{{apiClienteEliminarPorId}}
+
+//METODOS PUT
+@apiClienteActualizarPorId = cliente/actualizar/54
+PUT {{api}}{{apiClienteActualizarPorId}}
+Content-Type: application/json  
+
+{
+  "nombre": "Rosy",
+  "apellidos": "Dede Perez",
+  "email": "dd@gmail.com"
+}
